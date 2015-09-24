@@ -6,7 +6,10 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+
+  <link rel="stylesheet" href="/stylesheets/materialize.css">
+
   <!--
     application.css is where you put your styles
   -->
@@ -18,9 +21,17 @@
   <title><%=@title%></title>
 </head>
 <body>
-  <%=erb :'navbar'%>
+  
+  <div class="wrapper" style="margin-top: 2em">
+    <% if @error %>
+    <div class="error">
+      <%= @error %>
+    </div>
+    <% end %>
     <div id="pages">
       <%= yield %>
     </div>
+  </div>
+  <%=erb :'navbar'%>
 </body>
 </html>

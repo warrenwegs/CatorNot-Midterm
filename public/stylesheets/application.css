@@ -1,8 +1,17 @@
+
 nav {
   background: rgb(50,50,50);
   left: 0; padding: 0 1em;
   position: fixed;
   right: 0; top: 0; z-index: 1; }
+
+nav {
+  background: rgb(50,50,50);
+  left: 0; padding: 0 1em;
+  position: fixed;
+  right: 0; top: 0; z-index: 1;
+}
+
 
 nav,
 nav a {
@@ -18,8 +27,15 @@ nav ul {
   float: right; list-style: none; margin: 0; padding: 0;
 }
 
+
 nav .logo {
   float: left;
+
+nav .logo {
+  float: left;
+  display: inline-block;
+  list-style: none;
+
 }
 
 .jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%;
@@ -44,7 +60,9 @@ nav .logo {
 
 #pages{
   position: relative;
-  margin-top: 3em;
+  padding-top: 4em;
+  background-color: rgb(50,50,50);
+  color: black;
 }
 
 #signup_form .field{
@@ -56,6 +74,7 @@ nav .logo {
   float:left;
   text-align: right;
   width: 220px;
+<<<<<<< HEAD
 
 }
 
@@ -97,3 +116,58 @@ nav .logo {
   margin- bottom: 20px;
 
 }
+
+}
+
+.vote_box{
+  margin-top: 5em;
+  position: relative;
+  text-align: center;
+}
+
+.vote_box .options{
+  position: relative;
+}
+
+@media (min-width: 601px){
+  #or_tag{
+    padding-top: 12em;
+  }
+
+  .card-image{
+    overflow: hidden;
+    height: 25em;
+  }
+}
+.card .card-image img{
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media(max-width: 601px){
+  #or_tag{
+    padding-top: 0em;
+    display: none;
+  }
+
+  .card-image{
+    overflow: hidden;
+    height: 15em;
+    width: 10em;
+    margin: auto;
+  }
+
+}
+
+@media(min-width: 992px){
+  .card-image{
+    overflow: hidden;
+    height: 30em;
+  }
+}
+
+.vote_box .options div{
+  display: inline-block;
+}
+
