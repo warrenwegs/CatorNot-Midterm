@@ -44,7 +44,9 @@ nav .logo {
 
 #pages{
   position: relative;
-  margin-top: 3em;
+  padding-top: 4em;
+  background-color: rgb(50,50,50);
+  color: black;
 }
 
 #signup_form .field{

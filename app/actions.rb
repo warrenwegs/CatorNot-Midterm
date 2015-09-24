@@ -1,7 +1,7 @@
 # Homepage (Root path)
 
 get '/' do
-  erb :new_post
+  erb :'index'
 end
 
 get "/signup" do
@@ -17,6 +17,5 @@ get '/user/results' do
   erb :'user/results'
 end
 
-# get '/nowhere' do
-#   erb :'nowhere'
-# end
+post 'signup' do
+end
