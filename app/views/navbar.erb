@@ -1,22 +1,18 @@
-<%unless current_user%>
-<nav>
-  <div class="logo">
-    <a href="/">CatOrNot</a>
-  </div>
-     <ul>
-      <li><a href="/signup">Sign Up</a></li>
-      <li><a href="/signin">Log In</a></li>
-    </ul>
-</nav>
-<%end%>
-
 <nav>
   <div class="logo">
     <li><a href="/">CatOrNot</a></li>
-    <li><a href="..">New</a></li>
-    <li><a href="..">Trending</a></li>
+    <% if current_user %>
+      <li><a href="..">New</a></li>
+      <li><a href="..">Trending</a></li>
+    <% end %>
   </div>
-     <ul>
-      <li><a href="/logout">Log Out</a></li>
-    </ul>
+  <ul>
+    <%if current_user %>
+      <li><a href="/logout">Log Out (<%= current_user.email %>)</a></li>
+    <% else %>
+      <li><a href="/signup">Sign Up</a></li>
+      <li><a href="/signin">Log In</a></li>
+    <%end%>
+  </ul>
+  <div style="clear: both"><!-- --></div>
 </nav>

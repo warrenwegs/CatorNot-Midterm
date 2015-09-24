@@ -1,12 +1,14 @@
 # Homepage (Root path)
 helpers do
   def current_user
-    @current_user = User.find_by(id: session[:user_id]) if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 end
 
 get '/' do
-  erb :'index'
+  # Doing extra stuff
+  @error = 'Hello'
+  erb :index
 end
 
 get "/signup" do
@@ -32,15 +34,35 @@ post '/signup' do
     password_confirmation: params[:password_confirmation],
     )
   if user.save
-  session[:user_id] = user.id
+    session[:user_id] = user.id
     redirect '/'
   else
-    redirect '/signup'
+    @error = "Some shit happened"
+    erb :'/signup'
   end
 end
 
 get '/signin' do
-  erb :'signin'
+  erb :'/users/signin'
 end
-# get "/logout"
-# end
+
+post '/signin' do
+  user = User.where(email: params[:email])
+             .first
+             .authenticate(params[:password])
+
+  if user
+    session[:user_id] = user.id
+    redirect '/'
+  else
+    @error = "Username/Password combination is incorrect"
+    erb :signin
+  end
+end
+
+
+
+get "/logout" do
+  session.clear
+  redirect '/'
+end
