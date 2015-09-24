@@ -6,8 +6,9 @@ helpers do
 end
 
 get '/' do
+
   # Doing extra stuff
-  @error = 'Hello'
+
   erb :index
 end
 
@@ -42,6 +43,7 @@ post '/signup' do
   end
 end
 
+
 get '/signin' do
   erb :'/users/signin'
 end
@@ -66,3 +68,4 @@ get "/logout" do
   session.clear
   redirect '/'
 end
+
