@@ -1,4 +1,4 @@
 # Homepage (Root path)
 get '/' do
-  erb :index
+  erb :new_post
 end

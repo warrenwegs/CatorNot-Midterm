@@ -1,0 +1,28 @@
+<h4>Question</h4>
+
+<form>
+  <label for="question">Question: </label>
+  <input type="text" name="question" placeholder="Question?"><br>
+
+  <label for="url_first">Enter first url: </label>
+  <input type="url" class="url-input" data-image-target="image1" name="url_first" placeholder="Enter frst url..."><br>
+  <img id = "image1" src ="">
+  <label for="url_second">Enter second URL: </label>
+  <input type="url" class="url-input" data-image-target="image2" name="url_second" placeholder="Enter second url..."><br>
+  <img id = "image2" src ="">
+
+
+  <input type="checkbox" name="category1" value="Electronics">Electronics<br>
+  <input type="checkbox" name="category2" value="Fashion">Fashion<br>
+  <input type="submit" value="Post">
+
+<script>
+  $(".url-input").on("change", function(event) {
+    var targetId = $(this).data("image-target");
+    var targetElement = $("#"+targetId); // "image1" -> $("#image1")
+    var imgSrc = $(this).val();         // text value of input field that has been 'changed'
+    targetElement.attr("src", imgSrc);
+  });
+</script>
+
+</form>
