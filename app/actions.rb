@@ -9,6 +9,7 @@ get "/signup" do
 end
 
 get '/vote' do
+  @question = Question.first
   erb :vote
 end
 
