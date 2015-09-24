@@ -15,3 +15,7 @@ end
 get '/user/results' do
   erb :'user/results'
 end
+
+# get '/nowhere' do
+#   erb :'nowhere'
+# end
