@@ -1,19 +1,23 @@
 <h4>Question</h4>
 
-<form>
+<form class="myform" action="/submit" method="POST">
   <label for="question">Question: </label>
   <input type="text" name="question" placeholder="Question?"><br>
-
+  <label for="question">Name: </label>
+  <input type="text" name="item1_name" placeholder="Name for Item 1"><br>
   <label for="url_first">Enter first url: </label>
   <input type="url" class="url-input" data-image-target="image1" name="url_first" placeholder="Enter frst url..."><br>
   <img id = "image1" src ="">
+  <label for="question">Name: </label>
+  <input type="text" name="item2_name" placeholder="Name for Item 2"><br>
   <label for="url_second">Enter second URL: </label>
   <input type="url" class="url-input" data-image-target="image2" name="url_second" placeholder="Enter second url..."><br>
   <img id = "image2" src ="">
 
 
-  <input type="checkbox" name="category1" value="Electronics">Electronics<br>
-  <input type="checkbox" name="category2" value="Fashion">Fashion<br>
+  <input type="checkbox" name="category" value="Electronics">Technology<br>
+  <input type="checkbox" name="category" value="Fashion">Lifestyle<br>
+  <input type="checkbox" name="category" value="Fashion">Entertainment<br>
   <input type="submit" value="Post">
 
 <script>
