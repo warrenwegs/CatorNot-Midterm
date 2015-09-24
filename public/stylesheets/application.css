@@ -20,6 +20,8 @@ nav ul {
 
 nav .logo { 
   float: left; 
+  display: inline-block;
+  list-style: none;
 }
 
 .jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%; 

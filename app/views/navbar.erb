@@ -1,3 +1,4 @@
+<%unless current_user%>
 <nav>
   <div class="logo">
     <a href="/">CatOrNot</a>
@@ -5,5 +6,17 @@
      <ul>
       <li><a href="/signup">Sign Up</a></li>
       <li><a href="/signin">Log In</a></li>
+    </ul>
+</nav>
+<%end%>
+
+<nav>
+  <div class="logo">
+    <li><a href="/">CatOrNot</a></li>
+    <li><a href="..">New</a></li>
+    <li><a href="..">Trending</a></li>
+  </div>
+     <ul>
+      <li><a href="/logout">Log Out</a></li>
     </ul>
 </nav>
