@@ -22,7 +22,11 @@ GEM
     i18n (0.7.0)
     json (1.8.3)
     method_source (0.8.2)
+<<<<<<< HEAD
     minitest (5.8.0)
+=======
+    minitest (5.8.1)
+>>>>>>> f8f06508cc7ce3628ace21d2934957d5eda32776
     multi_json (1.11.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
