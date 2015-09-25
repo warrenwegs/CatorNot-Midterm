@@ -10,7 +10,7 @@ get '/' do
 end
 
 get "/signup" do
-  erb :'users/signup'
+  erb :'user/signup'
 end
 
 get '/user/results' do
@@ -56,7 +56,7 @@ post '/submit' do
 end
 
 get '/signin' do
-  erb :'/users/signin'
+  erb :'/user/signin'
 end
 
 post '/signin' do
