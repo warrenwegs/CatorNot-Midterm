@@ -3,7 +3,8 @@ nav {
 }
 .jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%; 
   background-size: cover; color: rgb(255,255,255); height: 50em; 
-  position: relative; 
+  position: relative;
+  top: -45px; 
 }
 
 .jumbotron header { text-align: center; left: 0; position: absolute;
@@ -14,8 +15,6 @@ nav {
 .jumbotron header h1 { font-size: 3em; margin: 0; text-transform: uppercase;
 }
 
-.jumbotron header p { margin: 0;
-}
 
 .post_history {
   height: 100px;

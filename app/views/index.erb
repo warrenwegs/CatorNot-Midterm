@@ -1,11 +1,14 @@
 <body>
   <section id="splash" class="jumbotron">
+  <div id="splash" splash="image">
+    <!-- img src="/images/splash.jpeg"> -->
+  </div>
     <header>
       <% if current_user %>
-        <h1><a href="....">POST</a>&nbsp<a href="...">VOTE</a></h1>
+        <h1><a href="/new_post">POST</a>&nbsp<a href="/vote">VOTE</a></h1>
       <% else %>
         <h1>Cat-Or-Not</h1>
-        <p>Sign in to compare</p>
+        <p><a href="/signin">Sign in</a> to compare</p>
       <% end %>
     </header>
   </section>

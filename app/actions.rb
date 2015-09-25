@@ -80,6 +80,9 @@ post '/signin' do
   end
 end
 
+get "/comment" do
+  erb :comment
+end
 
 
 get "/logout" do
