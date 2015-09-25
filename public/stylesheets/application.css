@@ -24,38 +24,32 @@ nav {
   border: 1px solid black;
 }
 
-.item1 {
-  padding: 5px;
-  margin: auto;
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
-  overflow: hidden;
-  float: left;
+.result_item{
+  background-color: #303f9f;
 }
 
-.item2 {
-  padding: 5px;
+.result div{
+  display: inline-block;
+}
+
+.result_image{
   height: 100px;
-  width: 100px;
-  margin-left: 10px;
-  border: 1px solid black;
   overflow: hidden;
-  float: right;
+}
+
+.results img{
+  height: auto;
+  width: 100px;
+  overflow: hidden;
+}
+
+.result_or{
+  margin: 0 auto;
+
 }
 
 input{
   color: white;
-}
-
-.item1 img {
-  width: 100%;
-  padding: 2px;
-}
-
-.item2 img {
- width: 100%;
- margin- bottom: 20px;
 }
 
 .vote_box{
