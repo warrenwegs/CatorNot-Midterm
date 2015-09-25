@@ -1,4 +1,6 @@
-
+nav {
+  margin-bottom: 3em;
+}
 .jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%; 
   background-size: cover; color: rgb(255,255,255); height: 50em; 
   position: relative; 
@@ -60,7 +62,6 @@
 
 .vote_box div{
   display: inline-block;
-  margin-top: 5em;
 }
 
 .vote_box img{
@@ -114,6 +115,9 @@
 
 .vote_pic{
   padding: 1em;
+  border: 10px solid black;
+  border-radius: 50px;
+  /*box-shadow: 0px 0px 0px #888888;
 }
 
 @media (max-width: 601px){
@@ -128,4 +132,6 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+
 }*/
+

@@ -14,14 +14,14 @@ get "/signup" do
 end
 
 get '/vote' do
-  @question = Question.first
+  @question = Question.last
   erb :vote
 end
 
 get '/user/results' do
-  @user = User.find(session[:user])
-  @item1 = @user.questions.last.items.first
-  @item2 = @user.questions.last.items.last
+  @user = User.find(current_user.id)
+  @item1 = @user.questions.last.item1
+  @item2 = @user.questions.last.item2
   erb :'user/results'
 end
 
@@ -43,8 +43,14 @@ post '/signup' do
   end
 end
 
+
+get '/new_post' do
+  erb :'new_post'
+end
+
 post '/submit' do
-  @question = Question.create(user_id: session[:user], category: params[:category])
+
+  @question = Question.create(user_id: current_user.id, category: params[:category])
   @item1 = Item.create(question_id: @question.id, name: params[:item1_name], url: params[:item1_url] )
   @item2 = Item.create(question_id: @question.id, name: params[:item2_name], url: params[:item2_url] )
   @question.update(item1_id: @item1.id, item2_id: @item2.id)
