@@ -88,6 +88,17 @@ post '/signin' do
   end
 end
 
+
+get "/comment" do
+#   if current_user
+#   @comments = Comment.find(current_user.id)
+# end
+erb :'comment'
+end
+
+
+
+
 get "/logout" do
   session.clear
   redirect '/'
@@ -123,4 +134,7 @@ post "/vote" do
       )
   end
   redirect '/vote'
+
 end
+
+
