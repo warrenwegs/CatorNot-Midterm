@@ -15,24 +15,21 @@
   -->
   <link rel="stylesheet" href="/stylesheets/application.css">
 
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/javascript/application.js"></script>
   <script src="/javascript/materialize.js"></script>
 
+
   <title><%=@title%></title>
 </head>
 <body class="indigo darken-1">
-  <%=erb :'navbar'%>
+  <%= erb :navbar %>
   <div class="wrapper">
-    <% if @error %>
-    <div class="error">
-      <%= @error %>
-    </div>
-    <% end %>
+    <%= erb :errors %>
     <div>
       <%= yield %>
     </div>
   </div>
- 
 </body>
 </html>

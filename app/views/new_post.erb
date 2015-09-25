@@ -1,36 +1,47 @@
-<h4>Question</h4>
-
-<form class="myform" action="/submit" method="POST">
-  <label for="question">Question: </label>
-  <input type="text" name="question" placeholder="Question?"><br>
-  <label for="question">Name: </label>
-  <input type="text" name="item1_name" placeholder="Name for Item 1"><br>
-  <label for="url_first">Enter first url: </label>
-  <input type="url" class="url-input" data-image-target="image1" name="item1_url" placeholder="Enter the url..."><br>
-  <img id = "image1" src ="">
-  <label for="question">Name: </label>
-  <input type="text" name="item2_name" placeholder="Name for Item 2"><br>
-  <label for="url_second">Enter second URL: </label>
-  <input type="url" class="url-input" data-image-target="image2" name="item2_url" placeholder="Enter the url..."><br>
-  <img id = "image2" src ="">
-
-
-    <label>Browser Select</label>
-    <select class="browser-default" name="category">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="technology" name="category">Technology</option>
-      <option value="Fashion" name="category">Lifestyle</option>
-      <option value="Entertainment" name="category">Entertainment</option>
-    </select>
-    <input type="submit" value="Post">
-
-<script>
-  $(".url-input").on("change", function(event) {
-    var targetId = $(this).data("image-target");
-    var targetElement = $("#"+targetId); // "image1" -> $("#image1")
-    var imgSrc = $(this).val();         // text value of input field that has been 'changed'
-    targetElement.attr("src", imgSrc);
-  });
-</script>
-
-</form>
+<h4 class="center-align">Question</h4>
+  <div class="row">
+    <form class="col s12" action="/new_post" method="POST">
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" name="item1_name" class="field" placeholder="First Item" value="<%= @item1.name %>">
+        </div>
+        <div class="input-field col s6">
+          <input type="text" name="item2_name" class="field" placeholder="Second Item" value="<%= @item2.name %>">
+        </div>
+        <div class="input-field col s6">
+          <input type="url" class="url_input" name="item1_url" data-image-target="image1" placeholder="URL for first item" value="<%= @item1.url %>">
+        </div>
+         <div class="input-field col s6">
+          <input type="url" class="url_input" name="item2_url" data-image-target="image2" placeholder="URL for second item" value="<%= @item2.url %>">
+        </div>
+        <div class="input-field col s4 offset-s1">
+          <img id = "image1" src="<%= @item1.url %>" height = 400px width = 400px>
+        </div>
+        <div class="input-field col s4 offset-s2">
+          <img id = "image2" src="<%= @item2.url %>" height = 400px width = 400px>
+        </div>
+      </div>
+      <% %w{ Technology Lifestyle Entertainment }.each_with_index do |category, idx| %>
+        <div class="col s4">
+        <p>
+          <input type="radio"
+                 class="with-gap"
+                 id="category<%= idx + 1 %>"
+                 name="category"
+                 value="<%= category %>"
+                 <% if @question.category == category %>checked="checked"<% end %>
+                 />
+          <label for="category<%= idx + 1 %>"><%= category %></label>
+        </p>
+      </div>
+      <% end %>
+      <br>
+      <br>
+      <br>
+      <div class="center-align">
+        <button class="btn waves-effect waves-light" class="center-align" type="submit">Post
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div
