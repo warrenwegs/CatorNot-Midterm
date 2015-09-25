@@ -10,7 +10,7 @@ get '/' do
 end
 
 get "/signup" do
-  erb :'users/signup'
+  erb :'user/signup'
 end
 
 get '/user/results' do
@@ -56,7 +56,7 @@ post '/submit' do
 end
 
 get '/signin' do
-  erb :'/users/signin'
+  erb :'/user/signin'
 end
 
 post '/signin' do
@@ -101,10 +101,15 @@ end
 
 post "/vote" do
   if current_user.can_vote?(params[:question_id])
-    vote = Vote.create(
+    Vote.create(
       user_id: params[:user_id],
       question_id: params[:question_id],
       item_id: params[:vote]
+      )
+    Comment.create(
+      user_id: params[:user_id],
+      question_id: params[:question_id],
+      text: params[:comment_text]
       )
   end
   redirect '/vote'
