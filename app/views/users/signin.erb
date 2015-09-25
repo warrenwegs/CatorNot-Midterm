@@ -6,7 +6,7 @@
 <body>
   <div class="container">
       <div class="row">
-          <div class="col-md-offset-1 col-md-10">
+          <div class="col s4 offset-s4 grid-example" class="center-align">
             <form method="post" action="/signin" id="signup_form">
               <label for="Email" class="field1">Email:</label>
                 <input type="email" class="field" name="email" placeholder="Email">
@@ -17,7 +17,11 @@
                 <input type="password" class="field" name="password" placeholder="Password">
                 <br>
                 <br>
-                <button type="submit" class= "btn-btn info">Submit </button>
+                <div class="center-align">
+                <button class="btn waves-effect waves-light" class="center-align" type="submit" name="action">Submit
+                  <i class="material-icons right">send</i>
+                </button>
+                </div>
 
             </form>
           </div>

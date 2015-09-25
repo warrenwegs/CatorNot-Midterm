@@ -1,44 +1,9 @@
-nav {
-  background: rgb(50,50,50);
-  left: 0; padding: 0 1em;
-  position: fixed;
-  right: 0; top: 0; z-index: 1; }
 
-nav {
-  background: rgb(50,50,50);
-  left: 0; padding: 0 1em;
-  position: fixed;
-  right: 0; top: 0; z-index: 1;
+.jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%; 
+  background-size: cover; color: rgb(255,255,255); height: 50em; 
+  position: relative; 
 }
 
-nav,
-nav a {
-  color: rgb(255,255,255);
-}
-nav a {
-  display: block; padding: 1em;
-}
-nav li {
-  float: left;
-}
-nav ul {
-  float: right; list-style: none; margin: 0; padding: 0;
-}
-
-nav .logo {
-  float: left;
-  display: inline-block;
-  list-style: none;
-}
-
-.jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%;
-  background-size: cover; color: rgb(255,255,255); height: 50em; padding: 1em;
-  position: relative;
-}
-
-.jumbotron form { bottom: 0; left: 0; padding: 1em; position: absolute;
-  right: 0; text-align: center;
-}
 
 .jumbotron header { text-align: center; left: 0; position: absolute;
   right: 0; top: 50%;
@@ -51,23 +16,9 @@ nav .logo {
 .jumbotron header p { margin: 0;
 }
 
-#pages{
-  position: relative;
-  padding-top: 4em;
-  background-color: rgb(50,50,50);
-  color: black;
-}
 
-#signup_form .field{
-  margin-left: 10px;
-  width: 200px;
-}
 
-#signup_form .field1{
-  float:left;
-  text-align: right;
-  width: 220px;
-}
+
 
 .post_history {
   height: 100px;
