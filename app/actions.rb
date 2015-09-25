@@ -15,12 +15,7 @@ end
 
 get "/signup" do
   @user = User.new
-  erb :'users/signup'
-end
-
-get '/vote' do
-  @questions = Question.last
-  erb :vote
+  erb :'user/signup'
 end
 
 get '/user/results' do
@@ -38,13 +33,13 @@ post '/signup' do
     password_confirmation: params[:password_confirmation]
     )
   if @user.save
-    session[:user_id] = user.id
+    session[:user_id] = @user.id
     redirect '/'
   else
     @errors.concat [@user]
         .map(&:errors)
         .flat_map(&:to_a)
-    erb :'users/signup'
+    erb :'user/signup'
   end
 end
 
@@ -72,7 +67,8 @@ post '/new_post' do
         .flat_map(&:to_a)
       raise ActiveRecord::Rollback, "Validation failed"
     end
-  erb :new_post
+    erb :new_post
+  end
 end
 
 get '/signin' do
@@ -88,7 +84,7 @@ post '/signin' do
     redirect '/'
   else
     @errors << "Username/Password combination is incorrect"
-    erb :'users/signin'
+    erb :'user/signin'
   end
 end
 
