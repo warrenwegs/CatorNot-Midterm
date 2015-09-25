@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%@title="Home"%></title>
-  </head>
-  <body>
-    <section id="splash" class="jumbotron">
-      <header>
+<body>
+  <section id="splash" class="jumbotron">
+    <header>
+      <% if current_user %>
+        <h1><a href="....">POST</a>&nbsp<a href="...">VOTE</a></h1>
+      <% else %>
         <h1>Cat-Or-Not</h1>
         <p>Sign in to compare</p>
-      </header>
-    </section>
-  </body>
-</html>
-
-    
-    
+      <% end %>
+    </header>
+  </section>
+</body>

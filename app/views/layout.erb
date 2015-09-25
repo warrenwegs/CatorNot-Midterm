@@ -21,9 +21,17 @@
   <title><%=@title%></title>
 </head>
 <body>
-  <%=erb :'navbar'%>
+  
+  <div class="wrapper" style="margin-top: 2em">
+    <% if @error %>
+    <div class="error">
+      <%= @error %>
+    </div>
+    <% end %>
     <div id="pages">
       <%= yield %>
     </div>
+  </div>
+  <%=erb :'navbar'%>
 </body>
 </html>
