@@ -6,6 +6,5 @@ class Question < ActiveRecord::Base
   has_many :tags
   has_many :votes
 
-  # validates :category, presence: true
-
+  validates :category, presence: true
 end

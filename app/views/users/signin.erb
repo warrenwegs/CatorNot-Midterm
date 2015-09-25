@@ -9,7 +9,7 @@
           <div class="col s4 offset-s4 grid-example" class="center-align">
             <form method="post" action="/signin" id="signup_form">
               <label for="Email" class="field1">Email:</label>
-                <input type="email" class="field" name="email" placeholder="Email">
+                <input type="email" class="field" name="email" placeholder="Email" value = "<%= @user.email if @user && @user.email %>">
                 <br>
                 <br>
 

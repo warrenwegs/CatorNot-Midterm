@@ -1,4 +1,13 @@
-$(document).ready(function() {
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+$(function()
+{
+  $("[data-image-target]")
+  // .attr('placeholder', 'Image URL')
+  .on("change", function(event)
+  {
+    var el = $(this);
+    var targetId = el.data("image-target");
+    var targetElement = $("#"+targetId); // "image1" -> $("#image1")
+    var imgSrc = el.val();         // text value of input field that has been 'changed'
+    targetElement.attr("src", imgSrc);
+  });
 });

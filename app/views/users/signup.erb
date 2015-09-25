@@ -8,33 +8,33 @@
       <div class="row">
           <div class="col s4 offset-s4 grid-example" class="center-align">
             <form method="post" action="/signup" id="signup_form">
-              
-                <input type="text" class="field" name="first_name" placeholder="First Name">
+
+                <input type="text" class="field" name="first_name" placeholder="First Name" value = "<%= @user.first_name %>">
                 <br>
                 <br>
 
-                
-                <input type="text" class="field" name="last_name" placeholder="Last Name">
+
+                <input type="text" class="field" name="last_name" placeholder="Last Name" value = "<%= @user.last_name %>">
                 <br>
                 <br>
 
-                
-                <input type="text" class="field" name="username" placeholder="Username">
+
+                <input type="text" class="field" name="username" placeholder="Username" value = "<%= @user.user_name %>">
                 <br>
                 <br>
 
-               
-                <input type="email" class="field" name="email" placeholder="Email">
+
+                <input type="email" class="field" name="email" placeholder="Email" value = "<%= @user.email%>">
                 <br>
                 <br>
 
-                
+
                 <input type="password" class="field" name="password" placeholder="Password">
                 <br>
                 <br>
 
 
-                
+
                 <input type="password" class="field" name="password_confirmation" placeholder="Password">
                 <br>
                 <br>

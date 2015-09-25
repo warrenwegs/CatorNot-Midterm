@@ -1,15 +1,16 @@
+<% @questions.each do |question| %>
 <div class="question_table">
 
   <div class="post_history">
     <div class = 'item1'>
-      <img src=<%= @item1.url %>>
+      <img src=<%= question.item1.url %>>
     </div>
       <p>VS</p>
     <div class = 'item2'>
-      <img src=<%= @item2.url %>>
+      <img src=<%= question.item2.url %>>
     </div>
   </div>
 
 </div>
-
+<%end%>
 
