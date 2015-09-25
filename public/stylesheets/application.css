@@ -112,18 +112,13 @@ nav .logo {
   text-align: center;
 }
 
-.vote_box .options{
-  position: relative;
+.card{
+  padding: 1em;
 }
 
-@media (min-width: 601px){
+@media (max-width: 601px){
   #or_tag{
-    padding-top: 12em;
-  }
-
-  .card-image{
-    overflow: hidden;
-    height: 25em;
+    display: none;
   }
 }
 .card .card-image img{
@@ -132,29 +127,3 @@ nav .logo {
   top: 50%;
   transform: translateY(-50%);
 }
-@media(max-width: 601px){
-  #or_tag{
-    padding-top: 0em;
-    display: none;
-  }
-
-  .card-image{
-    overflow: hidden;
-    height: 15em;
-    width: 10em;
-    margin: auto;
-  }
-
-}
-
-@media(min-width: 992px){
-  .card-image{
-    overflow: hidden;
-    height: 30em;
-  }
-}
-
-.vote_box .options div{
-  display: inline-block;
-}
-

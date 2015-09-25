@@ -6,9 +6,6 @@ helpers do
 end
 
 get '/' do
-
-  # Doing extra stuff
-
   erb :index
 end
 
@@ -22,15 +19,10 @@ get '/vote' do
 end
 
 get '/user/results' do
-  # need some items sir
-
   @user = User.find(session[:user])
-
   @item1 = @user.questions.last.items.first
   @item2 = @user.questions.last.items.last
-  # binding.pry
   erb :'user/results'
-
 end
 
 post '/signup' do
@@ -40,23 +32,16 @@ post '/signup' do
     user_name: params[:username],
     email: params[:email],
     password: params[:password],
-    password_confirmation: params[:password_confirmation],
+    password_confirmation: params[:password_confirmation]
     )
-
-  # binding.pry
-  if @user.save
-    session[:user] = @user.id
-
   if user.save
     session[:user_id] = user.id
-
     redirect '/'
   else
     @error = "Some shit happened"
     erb :'/signup'
   end
 end
-
 
 post '/submit' do
   @question = Question.create(user_id: session[:user], category: params[:category])
@@ -80,7 +65,6 @@ post '/signin' do
   user = User.where(email: params[:email])
              .first
              .authenticate(params[:password])
-
   if user
     session[:user_id] = user.id
     redirect '/'
