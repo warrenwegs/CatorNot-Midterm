@@ -1,19 +1,29 @@
-<nav>
-  <div class"clearfix"></div>
-  <div class="logo">
-    <li><a href="/">CatOrNot</a></li>
-    <% if current_user %>
-      <li><a href="..">New</a></li>
-      <li><a href="..">Trending</a></li>
-    <% end %>
-  </div>
-  <ul>
-    <%if current_user %>
-      <li><a href="/logout">Log Out (<%= current_user.email %>)</a></li>
-    <% else %>
-      <li><a href="/signup">Sign Up</a></li>
-      <li><a href="/signin">Log In</a></li>
-    <%end%>
-  </ul>
-  <div style="clear: both"><!-- --></div>
-</nav>
+  <%if @current_user && current_user %>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">CatOrNot</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/signup">New</a></li>
+        <li><a href="/signin">Trending</a></li>
+        <li><a href="/logout">Log Out</a></li>  
+      </ul>
+    </div>
+  </nav>
+
+  <% else %>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">CatOrNot</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/signup">Signup</a></li>
+        <li><a href="/signin">Signin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <% end %>
+  
+  
+
