@@ -48,7 +48,6 @@ post '/signup' do
   end
 end
 
-
 get '/new_post' do
   redirect '/signin' if current_user.nil?
   @question = Question.new
@@ -73,13 +72,11 @@ post '/new_post' do
         .flat_map(&:to_a)
       raise ActiveRecord::Rollback, "Validation failed"
     end
-  end
   erb :new_post
 end
 
-
 get '/signin' do
-  erb :'/users/signin'
+  erb :'/user/signin'
 end
 
 post '/signin' do
@@ -98,4 +95,36 @@ end
 get "/logout" do
   session.clear
   redirect '/'
+end
+
+get '/vote' do
+  @question_ids = Question.pluck(:id).shuffle
+  i = 0
+  until current_user.can_vote?(@question_ids[i]) || i == @question_ids.count - 1 do
+    i += 1
+  end
+
+  if current_user.can_vote?(@question_ids[i])
+    @question = Question.find(@question_ids[i])
+    erb :vote
+  else
+    redirect '/'
+  end
+
+end
+
+post "/vote" do
+  if current_user.can_vote?(params[:question_id])
+    Vote.create(
+      user_id: params[:user_id],
+      question_id: params[:question_id],
+      item_id: params[:vote]
+      )
+    Comment.create(
+      user_id: params[:user_id],
+      question_id: params[:question_id],
+      text: params[:comment_text]
+      )
+  end
+  redirect '/vote'
 end
