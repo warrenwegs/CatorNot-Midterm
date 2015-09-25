@@ -1,25 +1,61 @@
 
-
 .jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%; 
   background-size: cover; color: rgb(255,255,255); height: 50em; 
   position: relative; 
 }
 
 
-.jumbotron header { text-align: center; left: 0; position: absolute; 
-  right: 0; top: 50%; 
-  transform: translateY(-50%); 
+.jumbotron header { text-align: center; left: 0; position: absolute;
+  right: 0; top: 50%;
+  transform: translateY(-50%);
 }
 
-.jumbotron header h1 { font-size: 3em; margin: 0; text-transform: uppercase; 
+.jumbotron header h1 { font-size: 3em; margin: 0; text-transform: uppercase;
 }
 
-.jumbotron header p { margin: 0; 
+.jumbotron header p { margin: 0;
 }
 
 
 
 
+
+.post_history {
+  height: 100px;
+  width: 500px;
+  margin: 100px auto 0px auto;
+  border: 1px solid black;
+}
+
+.item1 {
+  padding: 5px;
+  margin: auto;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  overflow: hidden;
+  float: left;
+}
+
+.item2 {
+  padding: 5px;
+  height: 100px;
+  width: 100px;
+  margin-left: 10px;
+  border: 1px solid black;
+  overflow: hidden;
+  float: right;
+}
+
+.item1 img {
+  width: 100%;
+  padding: 2px;
+}
+
+.item2 img {
+ width: 100%;
+ margin- bottom: 20px;
+}
 
 .vote_box{
   margin-top: 5em;
@@ -27,18 +63,13 @@
   text-align: center;
 }
 
-.vote_box .options{
-  position: relative;
+.card{
+  padding: 1em;
 }
 
-@media (min-width: 601px){
+@media (max-width: 601px){
   #or_tag{
-    padding-top: 12em;
-  }
-
-  .card-image{
-    overflow: hidden;
-    height: 25em;
+    display: none;
   }
 }
 .card .card-image img{
@@ -46,29 +77,4 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-}
-@media(max-width: 601px){
-  #or_tag{
-    padding-top: 0em;
-    display: none;
-  }
-
-  .card-image{
-    overflow: hidden;
-    height: 15em;
-    width: 10em;
-    margin: auto;
-  }
-
-}
-
-@media(min-width: 992px){
-  .card-image{
-    overflow: hidden;
-    height: 30em;
-  }
-}
-
-.vote_box .options div{
-  display: inline-block;
 }
