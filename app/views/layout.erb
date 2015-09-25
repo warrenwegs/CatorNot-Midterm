@@ -8,6 +8,7 @@
   -->
 
   <link rel="stylesheet" href="/stylesheets/materialize.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!--
     application.css is where you put your styles
@@ -16,10 +17,11 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/javascript/application.js"></script>
+  <script src="/javascript/materialize.js"></script>
 
   <title><%=@title%></title>
 </head>
-<body>
+<body class="indigo lighten-5">
   <%=erb :'navbar'%>
   <div class="wrapper">
     <% if @error %>

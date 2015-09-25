@@ -4,7 +4,6 @@
   position: relative; 
 }
 
-
 .jumbotron header { text-align: center; left: 0; position: absolute;
   right: 0; top: 50%;
   transform: translateY(-50%);
@@ -15,10 +14,6 @@
 
 .jumbotron header p { margin: 0;
 }
-
-
-
-
 
 .post_history {
   height: 100px;
@@ -58,12 +53,66 @@
 }
 
 .vote_box{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.vote_box div{
+  display: inline-block;
+  margin-top: 5em;
+}
+
+.vote_box img{
+  max-height: 400px;
+  max-width: 400px;
+
+}
+
+.vote_item{
+  height: 450px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px #252525;
+  -webkit-transition: box-shadow 0.3s transform 0.3s;
+}
+
+.vote_item:hover{
+  box-shadow: 7px 7px 20px #252525;
+  transform: translateY(0.1%);
+  -webkit-transition: box-shadow 0.3s;
+}
+
+.vote_item h4{
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.left_item{
+  position: relative;
+  right: 0;
+}
+
+.right_item{
+  position: relative;
+  left: 0;
+}
+
+.vote_or{
+  position: relative;
+  padding: 5em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/*.vote_box{
   margin-top: 5em;
   position: relative;
   text-align: center;
 }
 
-.card{
+.vote_pic{
   padding: 1em;
 }
 
@@ -72,9 +121,11 @@
     display: none;
   }
 }
-.card .card-image img{
+.vote_pic img{
+  height: 500px;
+  width: auto;
   display: block;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-}
+}*/
