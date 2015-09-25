@@ -1,21 +1,26 @@
-<div class="vote_box center-align">
-    <div class="vote_item left_item indigo darken-2">
-      <a onclick="Materialize.toast('Voted for <%= @question.item1.name.capitalize %>!', 1000, 'rounded')"><img src="<%= @question.item1.url %>"></a>
-      <h4><%= @question.item1.name.capitalize %></h4>
-    </div>
-    <div class="vote_or"><h3>OR</h3></div>
-    <div class="vote_item right_item indigo darken-2">
-      <a onclick="Materialize.toast('Voted for <%= @question.item2.name.capitalize %>!', 1000, 'rounded')"><img src="<%= @question.item2.url %>"></a>
-      <h4><%= @question.item2.name.capitalize %></h4>
-    </div>
+<form method="post" action="/vote">
+  <input name="question_id" type="hidden" value="<%= @question.id %>">
+  <input name="user_id" type="hidden" value="<%= current_user.id %>">
+  <div class="vote_box center-align">
+    <button class="vote_btn" name="vote" type="submit" value="<%= @question.item1.id %>">
+      <div class="vote_item left_item indigo darken-2">
+        <a onclick="Materialize.toast('Voted for <%= @question.item1.name.capitalize %>!', 1000, 'rounded')"><img src="<%= @question.item1.url %>"></a>
+        <h4><%= @question.item1.name.capitalize %></h4>
+      </div>
+    </button>
+      <div class="vote_or"><h3>OR</h3></div>
+    <button class="vote_btn" name="vote" type="submit" value="<%= @question.item2.id %>">
+      <div class="vote_item right_item indigo darken-2">
+        <a onclick="Materialize.toast('Voted for <%= @question.item2.name.capitalize %>!', 1000, 'rounded')"><img src="<%= @question.item2.url %>"></a>
+        <h4><%= @question.item2.name.capitalize %></h4>
+      </div>
+    </button>
   </div>
-</div>
+  <div class="row">
+      <div class="input-field col s8 offset-s2">
+        <input type="text" name="comment_text" placeholder="Enter comment here before voting...">
+      </div>
+  </div>
+</form>
 
-<div class="row">
-  <form method="post" action="######">
-    <div class="input-field col s8 offset-s2">
-      <input type="text" name="comment_text" placeholder="Enter comment here before voting...">
-    </div>
-  </form>
-</div>
 

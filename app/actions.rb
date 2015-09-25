@@ -13,11 +13,6 @@ get "/signup" do
   erb :'users/signup'
 end
 
-get '/vote' do
-  @question = Question.last
-  erb :vote
-end
-
 get '/user/results' do
   @user = User.find(current_user.id)
   @item1 = @user.questions.last.item1
@@ -43,13 +38,11 @@ post '/signup' do
   end
 end
 
-
 get '/new_post' do
   erb :'new_post'
 end
 
 post '/submit' do
-
   @question = Question.create(user_id: current_user.id, category: params[:category])
   @item1 = Item.create(question_id: @question.id, name: params[:item1_name], url: params[:item1_url] )
   @item2 = Item.create(question_id: @question.id, name: params[:item2_name], url: params[:item2_url] )
@@ -61,7 +54,6 @@ post '/submit' do
     redirect '/'
   end
 end
-
 
 get '/signin' do
   erb :'/users/signin'
@@ -80,11 +72,36 @@ post '/signin' do
   end
 end
 
-
-
 get "/logout" do
   session.clear
   redirect '/'
+end
+
+get '/vote' do
+  @question_ids = Question.pluck(:id).shuffle
+  i = 0
+  until current_user.can_vote?(@question_ids[i]) || i == @question_ids.count - 1 do
+    i += 1
+  end
+
+  if current_user.can_vote?(@question_ids[i])
+    @question = Question.find(@question_ids[i])
+    erb :vote
+  else
+    redirect '/'
+  end
+
+end
+
+post "/vote" do
+  if current_user.can_vote?(params[:question_id])
+    vote = Vote.create(
+      user_id: params[:user_id],
+      question_id: params[:question_id],
+      item_id: params[:vote]
+      )
+  end
+  redirect '/vote'
 end
 
 
