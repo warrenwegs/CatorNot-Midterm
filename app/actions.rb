@@ -74,8 +74,13 @@ end
 
 
 get "/comment" do
-  erb :comment
+#   if current_user
+#   @comments = Comment.find(current_user.id)
+# end
+erb :'comment'
 end
+
+
 
 
 get "/logout" do
@@ -114,5 +119,6 @@ post "/vote" do
   end
   redirect '/vote'
 end
+
 
 
