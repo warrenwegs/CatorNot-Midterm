@@ -86,12 +86,14 @@ get "/logout" do
 end
 
 post "/vote" do
-  binding.pry
-  vote = Vote.create(
-    user_id: params[:user_id],
-    question_id: params[:question_id],
-    item_id: params[:vote]
-    )
+  if current_user.can_vote?(params[:question_id])
+    vote = Vote.create(
+      user_id: params[:user_id],
+      question_id: params[:question_id],
+      item_id: params[:vote]
+      )
+  end
+  redirect '/vote'
 end
 
 
