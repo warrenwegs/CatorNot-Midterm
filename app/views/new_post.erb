@@ -15,10 +15,14 @@
   <img id = "image2" src ="">
 
 
-  <input type="checkbox" name="category" value="Electronics">Technology<br>
-  <input type="checkbox" name="category" value="Fashion">Lifestyle<br>
-  <input type="checkbox" name="category" value="Fashion">Entertainment<br>
-  <input type="submit" value="Post">
+    <label>Browser Select</label>
+    <select class="browser-default" name="category">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="technology" name="category">Technology</option>
+      <option value="Fashion" name="category">Lifestyle</option>
+      <option value="Entertainment" name="category">Entertainment</option>
+    </select>
+    <input type="submit" value="Post">
 
 <script>
   $(".url-input").on("change", function(event) {
