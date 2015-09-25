@@ -1,4 +1,6 @@
-
+nav {
+  margin-bottom: 5em;
+}
 .jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%; 
   background-size: cover; color: rgb(255,255,255); height: 50em; 
   position: relative; 
@@ -65,6 +67,9 @@
 
 .card{
   padding: 1em;
+  border: 10px solid black;
+  border-radius: 50px;
+  /*box-shadow: 0px 0px 0px #888888;*/
 }
 
 @media (max-width: 601px){
@@ -72,9 +77,18 @@
     display: none;
   }
 }
+
+.card .card-image{
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  margin:auto;
+}
 .card .card-image img{
   display: block;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  padding: 5px;
+  width: 100%;
 }
