@@ -5,23 +5,26 @@ helpers do
   end
 end
 
+before do
+  @errors = []
+end
+
 get '/' do
   erb :index
 end
 
 get "/signup" do
+  @user = User.new
   erb :'user/signup'
 end
 
 get '/user/results' do
-  @user = User.find(current_user.id)
-  @item1 = @user.questions.last.item1
-  @item2 = @user.questions.last.item2
+  @questions = current_user.questions
   erb :'user/results'
 end
 
 post '/signup' do
-  user = User.new(
+  @user = User.new(
     first_name: params[:first_name],
     last_name: params[:last_name],
     user_name: params[:username],
@@ -29,29 +32,42 @@ post '/signup' do
     password: params[:password],
     password_confirmation: params[:password_confirmation]
     )
-  if user.save
-    session[:user_id] = user.id
+  if @user.save
+    session[:user_id] = @user.id
     redirect '/'
   else
-    @error = "Some shit happened"
-    erb :'/signup'
+    @errors.concat [@user]
+        .map(&:errors)
+        .flat_map(&:to_a)
+    erb :'user/signup'
   end
 end
 
 get '/new_post' do
-  erb :'new_post'
+  redirect '/signin' if current_user.nil?
+  @question = Question.new
+  @item1 = Item.new
+  @item2 = Item.new
+  erb :new_post
 end
 
-post '/submit' do
-  @question = Question.create(user_id: current_user.id, category: params[:category])
-  @item1 = Item.create(question_id: @question.id, name: params[:item1_name], url: params[:item1_url] )
-  @item2 = Item.create(question_id: @question.id, name: params[:item2_name], url: params[:item2_url] )
-  @question.update(item1_id: @item1.id, item2_id: @item2.id)
+post '/new_post' do
 
-  if @question.errors.empty? && (@item1.errors.empty? && @item2.errors.empty?)
-     redirect 'user/results'
-  else
-    redirect '/'
+  Question.transaction do
+    @question = Question.create(user_id: current_user.id, category: params[:category])
+    @item1 = Item.create(question: @question, name: params[:item1_name], url: params[:item1_url] )
+    @item2 = Item.create(question: @question, name: params[:item2_name], url: params[:item2_url] )
+    @question.update(item1: @item1, item2: @item2)
+
+    if @question.valid? && @item1.valid? && @item2.valid?
+      return redirect '/user/results'
+    else
+      @errors.concat [@question, @item1, @item2]
+        .map(&:errors)
+        .flat_map(&:to_a)
+      raise ActiveRecord::Rollback, "Validation failed"
+    end
+    erb :new_post
   end
 end
 
@@ -60,15 +76,15 @@ get '/signin' do
 end
 
 post '/signin' do
-  user = User.where(email: params[:email])
+  @user = User.where(email: params[:email])
              .first
              .authenticate(params[:password])
-  if user
-    session[:user_id] = user.id
+  if @user
+    session[:user_id] = @user.id
     redirect '/'
   else
-    @error = "Username/Password combination is incorrect"
-    erb :signin
+    @errors << "Username/Password combination is incorrect"
+    erb :'user/signin'
   end
 end
 
@@ -118,7 +134,7 @@ post "/vote" do
       )
   end
   redirect '/vote'
-end
 
+end
 
 

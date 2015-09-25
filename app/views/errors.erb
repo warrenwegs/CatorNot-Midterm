@@ -1,0 +1,11 @@
+<% if @errors && @errors.any? %>
+<div class="errors">
+  <strong>There are some issues, please fix them:</strong>
+  <ol>
+    <img src = "http://rs276.pbsrc.com/albums/kk5/teamcallo/Smiley%20faces/36_20_21.gif~c200" height = 100px width = 100px >
+    <% @errors.each do |error| %>
+      <li><%= error %></li><br>
+    <% end %>
+  </ol>
+</div>
+<% end %>

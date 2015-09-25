@@ -1,11 +1,13 @@
 nav {
   margin-bottom: 3em;
 }
+
 .jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%; 
   background-size: cover; color: rgb(255,255,255); height: 50em; 
   position: relative;
   top: -45px; 
 }
+
 
 .jumbotron header { text-align: center; left: 0; position: absolute;
   right: 0; top: 50%;
@@ -23,38 +25,32 @@ nav {
   border: 1px solid black;
 }
 
-.item1 {
-  padding: 5px;
-  margin: auto;
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
-  overflow: hidden;
-  float: left;
+.result_item{
+  background-color: #303f9f;
 }
 
-.item2 {
-  padding: 5px;
+.result div{
+  display: inline-block;
+}
+
+.result_image{
   height: 100px;
-  width: 100px;
-  margin-left: 10px;
-  border: 1px solid black;
   overflow: hidden;
-  float: right;
+}
+
+.results img{
+  height: auto;
+  width: 100px;
+  overflow: hidden;
+}
+
+.result_or{
+  margin: 0 auto;
+
 }
 
 input{
   color: white;
-}
-
-.item1 img {
-  width: 100%;
-  padding: 2px;
-}
-
-.item2 img {
- width: 100%;
- margin- bottom: 20px;
 }
 
 .vote_box{
@@ -114,5 +110,26 @@ input{
   padding: 5em;
   top: 50%;
   transform: translateY(-50%);
+}
+
+
+.errors {
+  width: 500px;
+  /*height: 120px;*/
+  margin: auto;
+  border: 1px solid red;
+  border-radius: 25px;
+  padding:15px;
+  color: red;
+}
+.errors img {
+  float: right;
+  margin-top: -49px;
+  margin-right: -13px;
+  border-radius: 100px;
+}
+
+.errors li {
+  line-height: 2px;
 }
 
