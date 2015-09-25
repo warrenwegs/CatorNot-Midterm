@@ -1,4 +1,3 @@
-
 nav {
   background: rgb(50,50,50);
   left: 0; padding: 0 1em;
@@ -11,7 +10,6 @@ nav {
   position: fixed;
   right: 0; top: 0; z-index: 1;
 }
-
 
 nav,
 nav a {
@@ -27,15 +25,10 @@ nav ul {
   float: right; list-style: none; margin: 0; padding: 0;
 }
 
-
-nav .logo {
-  float: left;
-
 nav .logo {
   float: left;
   display: inline-block;
   list-style: none;
-
 }
 
 .jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%;
@@ -74,8 +67,6 @@ nav .logo {
   float:left;
   text-align: right;
   width: 220px;
-<<<<<<< HEAD
-
 }
 
 .post_history {
@@ -84,6 +75,7 @@ nav .logo {
   margin: 100px auto 0px auto;
   border: 1px solid black;
 }
+
 .item1 {
   padding: 5px;
   margin: auto;
@@ -93,6 +85,7 @@ nav .logo {
   overflow: hidden;
   float: left;
 }
+
 .item2 {
   padding: 5px;
   height: 100px;
@@ -105,18 +98,12 @@ nav .logo {
 
 .item1 img {
   width: 100%;
-
   padding: 2px;
-
-
 }
+
 .item2 img {
  width: 100%;
-
-  margin- bottom: 20px;
-
-}
-
+ margin- bottom: 20px;
 }
 
 .vote_box{
