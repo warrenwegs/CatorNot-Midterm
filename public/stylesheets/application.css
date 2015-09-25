@@ -44,6 +44,10 @@ nav {
   float: right;
 }
 
+input{
+  color: white;
+}
+
 .item1 img {
   width: 100%;
   padding: 2px;
@@ -65,8 +69,9 @@ nav {
 }
 
 .vote_box img{
-  max-height: 400px;
-  max-width: 400px;
+  height: 400px;
+  width: auto;
+  background-color: white;
 
 }
 
