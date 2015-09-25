@@ -1,30 +1,12 @@
-
-<div class="container">
-  <div class="row">
-    <div class="options">
-        <a href="/vote_item1">
-          <div class="indigo darken-4 card col s6 m5 hoverable large z-depth-5" >
-            <div class="card-image">
-              <img src="<%= @question.item1.url %>">
-            </div>
-            <div class="card-action">
-              <h4><%= @question.item1.name.capitalize %></h4>
-            </div>
-          </div>
-        </div>
-      </a>
-      <div class="col m2 center-align" id="or_tag"><h3>OR</h3>
-      </div>
-      <a href="/vote_item2">
-        <div class="indigo darken-4 card col s6 m5 hoverable large z-depth-5">
-          <div class="card-image">
-            <img src="<%= @question.item2.url %>">
-          </div>
-          <div class="card-action">
-            <h4><%= @question.item2.name.capitalize %></h4>
-          </div>
-        </div>
-      </a>
+<div class="vote_box center-align">
+    <div class="vote_item left_item indigo darken-2">
+      <a onclick="Materialize.toast('Voted for <%= @question.item1.name.capitalize %>!', 1000, 'rounded')"><img src="<%= @question.item1.url %>"></a>
+      <h4><%= @question.item1.name.capitalize %></h4>
+    </div>
+    <div class="vote_or"><h3>OR</h3></div>
+    <div class="vote_item right_item indigo darken-2">
+      <a onclick="Materialize.toast('Voted for <%= @question.item2.name.capitalize %>!', 1000, 'rounded')"><img src="<%= @question.item2.url %>"></a>
+      <h4><%= @question.item2.name.capitalize %></h4>
     </div>
   </div>
 </div>
@@ -33,7 +15,6 @@
   <form method="post" action="######">
     <div class="input-field col s8 offset-s2">
       <input type="text" name="comment_text" placeholder="Enter comment here before voting...">
-        <input type="button" value="Submit">
     </div>
   </form>
 </div>
