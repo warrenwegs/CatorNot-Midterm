@@ -58,7 +58,7 @@ post '/new_post' do
     @item1 = Item.create(question: @question, name: params[:item1_name], url: params[:item1_url] )
     @item2 = Item.create(question: @question, name: params[:item2_name], url: params[:item2_url] )
     @question.update(item1: @item1, item2: @item2)
-
+   
     if @question.valid? && @item1.valid? && @item2.valid?
       return redirect '/user/results'
     else
@@ -89,11 +89,9 @@ post '/signin' do
 end
 
 
-get "/comment" do
-#   if current_user
-#   @comments = Comment.find(current_user.id)
-# end
-erb :'comment'
+get "/comment/:question_id" do
+  @comments = Comment.where(question_id: params[:question_id])
+  erb :'comment'
 end
 
 
@@ -106,6 +104,7 @@ end
 
 get '/vote' do
   @question_ids = Question.pluck(:id).shuffle
+  binding.pry
   i = 0
   until current_user.can_vote?(@question_ids[i]) || i == @question_ids.count - 1 do
     i += 1
@@ -127,13 +126,11 @@ post "/vote" do
       question_id: params[:question_id],
       item_id: params[:vote]
       )
-    if params[:comment_text].length > 0
     Comment.create(
       user_id: params[:user_id],
       question_id: params[:question_id],
       text: params[:comment_text]
       )
-    end
   end
   redirect '/vote'
 

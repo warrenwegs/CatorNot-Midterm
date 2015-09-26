@@ -1,15 +1,8 @@
-  <ul class="collapsible" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header"><i class="material-icons">comment</i>First</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">comment</i>Second</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">comment</i>Third</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-    </li>
-  </ul>
-        
+<div class="center-align comment">
+  <p><i class="material-icons">message</i><h3>Comments</h3></p>
+    <ul>
+      <%@comments.each do |comment| %>
+        <li><%=comment.text%></li>
+      <% end %>
+    </ul>
+ </div>
