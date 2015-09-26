@@ -93,10 +93,21 @@ input{
   -webkit-transition: box-shadow 0.3s;
 }
 
-.vote_item h4{
+.vote_item .item_name{
   margin: 0 auto;
   text-align: center;
   color: white;
+}
+
+.vote_item .item_score{
+  position: absolute;
+  bottom: -1em;
+  font-size: 8em;
+  color: white;
+}
+
+.vote_item .hide{
+  display: hidden;
 }
 
 .left_item{

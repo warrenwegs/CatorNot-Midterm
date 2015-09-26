@@ -1,5 +1,14 @@
 $(function()
 {
+  console.log('Im here');
+  $(".vote_btn").click(function(){
+    console.log('Im here in func');
+    $(".item_score").removeClass("hide");
+
+    setTimeout(function(){ }, 500);
+
+  });
+
   $("[data-image-target]")
   // .attr('placeholder', 'Image URL')
   .on("change", function(event)
