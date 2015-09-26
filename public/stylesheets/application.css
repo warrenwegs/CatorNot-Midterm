@@ -1,10 +1,13 @@
 nav {
   margin-bottom: 3em;
 }
+
 .jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%; 
   background-size: cover; color: rgb(255,255,255); height: 50em; 
-  position: relative; 
+  position: relative;
+  top: -45px; 
 }
+
 
 .jumbotron header { text-align: center; left: 0; position: absolute;
   right: 0; top: 50%;
@@ -14,8 +17,6 @@ nav {
 .jumbotron header h1 { font-size: 3em; margin: 0; text-transform: uppercase;
 }
 
-.jumbotron header p { margin: 0;
-}
 
 .post_history {
   height: 100px;
@@ -66,7 +67,7 @@ input{
   height: 400px;
   width: auto;
   background-color: white;
-  max-width: 300px;
+  max-width: 400px;
 }
 
 .vote_btn{
@@ -109,5 +110,26 @@ input{
   padding: 5em;
   top: 50%;
   transform: translateY(-50%);
+}
+
+
+.errors {
+  width: 500px;
+  /*height: 120px;*/
+  margin: auto;
+  border: 1px solid red;
+  border-radius: 25px;
+  padding:15px;
+  color: red;
+}
+.errors img {
+  float: right;
+  margin-top: -49px;
+  margin-right: -13px;
+  border-radius: 100px;
+}
+
+.errors li {
+  line-height: 2px;
 }
 
