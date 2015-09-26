@@ -26,26 +26,65 @@ nav {
 
 .result_item{
   background-color: #303f9f;
+  height: 200px;
 }
 
-.result div{
+/*.result div{
   display: inline-block;
-}
+}*/
 
-.result_image{
-  height: 100px;
+/*.result_image{
+  height: 125px;
+  margin-right: 0px;
   overflow: hidden;
-}
+}*/
 
-.results img{
+/*.results img{
   height: auto;
   width: 100px;
   overflow: hidden;
+}*/
+.img1 img {
+  padding: 5px;
+  margin: auto;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  /*float: left;*/
 }
 
-.result_or{
-  margin: 0 auto;
+.img2 img {
+  padding: 5px;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  /*float: right;*/
+  margin: auto;
+}
 
+.img1 {
+  padding: 5px !important;
+}
+
+.img2 {
+  padding: 5px !important;
+}
+
+.result_or h4{
+  margin:50px auto 0px;
+  /*margin-bottom: -7px;*/
+}
+
+.date {
+  height: 1px;
+}
+
+.date i{
+  padding-left: 5px;
+}
+
+.date p{
+  padding-right: 5px;
 }
 
 input{
@@ -132,3 +171,7 @@ input{
   line-height: 2px;
 }
 
+.row .vote_count {
+  display: inline-block;
+  vertical-align: top;
+}

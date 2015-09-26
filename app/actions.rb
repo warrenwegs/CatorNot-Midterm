@@ -10,6 +10,7 @@ before do
 end
 
 get '/' do
+  binding.pry
   erb :index
 end
 
@@ -19,7 +20,7 @@ get "/signup" do
 end
 
 get '/user/results' do
-  @questions = current_user.questions
+  @questions = current_user.questions.order(created_at: :desc)
   erb :'user/results'
 end
 

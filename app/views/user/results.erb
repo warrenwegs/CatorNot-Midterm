@@ -1,32 +1,50 @@
-
 <% @questions.each do |question| %>
-<div class="question_table">
 
-  <div class="post_history">
-    <div class = 'item1'>
-      <img src=<%= question.item1.url %>>
-    </div>
-      <p>VS</p>
-    <div class = 'item2'>
-      <img src=<%= question.item2.url %>>
+  <div class="results">
+    <div class="row">
+      <div class="col s8 result_item offset-s2">
 
-<div class="results">
-  <div class="row">
-    <div class="col s8 result_item offset-s2">
-      <div class="row">
-        <div>
-          <div class = "col s5 result_image valign-wrapper">
-            <img class="valign" src=<%= question.item1.url %>>
-          </div>
-          <div class="col s2 result_image"><h4>OR</h4></div>
-          <div class = "col s5 valign-wrapper">
-            <img class="valign" src=<%= question.item1.url %>>
+        <div class="row">
+          <div class="col s12">
+
+            <div class="date">
+              <a href = '/comments/<%= question.id %>'><i class="material-icons left black-text">message</i></a>
+              <p class="light-blue lighten-1-text right-align">Posted On: <%= question.created_at.strftime("%A %d, %Y at %I:%M %p") %></p>
+            </div>
+
           </div>
         </div>
-      </div>
 
+        <div class="row">
+
+            <!-- LEFT SIDE -->
+            <div class = "col s5 img1 center-align">
+              <img class="valign" src=<%= question.item1.url %>><br>
+              <div class="vote_count"><b><%= Vote.where(item_id: question.item1.id).count %></b></div>
+              <i class="material-icons thumb1">thumb_up</i>
+            </div>
+
+
+
+            <!-- MIDDLE -->
+            <div class="col s2 result_or center-align">
+              <h4>OR</h4>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class = "col s5 img2 center-align">
+              <img class="valign" src=<%= question.item2.url %>><br>
+              <div class="vote_count"><b><%= Vote.where(item_id: question.item2.id).count %></b></div>
+              <i class="material-icons">thumb_up</i>
+
+            </div>
+
+        </div><!-- /.row -->
+
+
+      </div>
     </div>
   </div>
-</div>
 <%end%>
 

@@ -5,6 +5,7 @@ class Question < ActiveRecord::Base
   has_many :items
   has_many :tags
   has_many :votes
+  has_many :comments
 
   validates :category, :item1, :item2, presence: true
 
