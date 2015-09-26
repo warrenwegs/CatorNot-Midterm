@@ -67,7 +67,7 @@ input{
   height: 400px;
   width: auto;
   background-color: white;
-
+  max-width: 400px;
 }
 
 .vote_btn{

@@ -127,11 +127,13 @@ post "/vote" do
       question_id: params[:question_id],
       item_id: params[:vote]
       )
+    if params[:comment_text].length > 0
     Comment.create(
       user_id: params[:user_id],
       question_id: params[:question_id],
       text: params[:comment_text]
       )
+    end
   end
   redirect '/vote'
 
