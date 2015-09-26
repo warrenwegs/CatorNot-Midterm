@@ -4,15 +4,17 @@
   <div class="vote_box center-align">
     <button class="vote_btn" name="vote" type="submit" value="<%= @question.item1.id %>">
       <div class="vote_item left_item indigo darken-2">
-        <img onclick="Materialize.toast('Voted for <%= @question.item1.name.capitalize %>!', 1000, 'rounded')" src="<%= @question.item1.url %>">
-        <h4><%= @question.item1.name.capitalize %></h4>
+        <h1 class="item_score hide"><%= (@question.item1_score.to_f.round(2) * 100).to_i.to_s + "%" %></h1>
+        <img onclick="Materialize.toast('Voted for <%= @question.item1.name.capitalize %>!', 1000, 'rounded indigo darken-4')" src="<%= @question.item1.url %>">
+        <h4 class="item_name"><%= @question.item1.name.capitalize %></h4>
       </div>
     </button>
       <div class="vote_or"><h3>OR</h3></div>
     <button class="vote_btn" name="vote" type="submit" value="<%= @question.item2.id %>">
       <div class="vote_item right_item indigo darken-2">
-        <img onclick="Materialize.toast('Voted for <%= @question.item2.name.capitalize %>!', 1000, 'rounded')" src="<%= @question.item2.url %>">
-        <h4><%= @question.item2.name.capitalize %></h4>
+        <h1 class="item_score hide"><%= ((1-@question.item1_score.to_f.round(2)) * 100).to_i.to_s + "%" %></h1>
+        <img onclick="Materialize.toast('Voted for <%= @question.item2.name.capitalize %>!', 1000, 'rounded indigo darken-4')" src="<%= @question.item2.url %>">
+        <h4 class="item_name"><%= @question.item2.name.capitalize %></h4>
       </div>
     </button>
   </div>
