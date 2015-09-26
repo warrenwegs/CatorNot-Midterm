@@ -76,6 +76,10 @@ input{
   background-color: inherit;
 }
 
+.vote_btn:focus{
+  background-color: inherit;
+}
+
 .vote_item{
   height: 450px;
   border-radius: 10px;
