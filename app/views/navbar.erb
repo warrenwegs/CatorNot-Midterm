@@ -1,30 +1,21 @@
+<nav class="indigo darken-4">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">CatOrNot</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-
-  <nav class="indigo darken-4">
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo">CatOrNot</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-  <%if current_user %>
-    <li><a href="/trending">Trending</a></li>
-    <li><a href="/user/results">Results</a></li>
-    <!-- <li><a href="/logout"><a class="waves-effect waves-light btn #f44336 red">Log Out</a></li>&nbsp&nbsp -->
-    <li class="divider" ></li>
-    <a class='dropdown-button btn #f44336 red' href='/' data-activates='dropdown1' id='logout_button'><%=current_user.user_name%></a>
-    <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="/logout">Logout</a></li>
-    <ul>
-
-  <% else %>
-    <li><a href="/signup">Signup</a></li>
-    <li><a href="/signin">Signin</a></li>
-  <% end %>
-      </ul>
-    </div>
-  </nav>
-
-
-
-
-
-
+      <%if current_user %>
+        <li><a href="/trending">Trending</a></li>
+        <li><a href="/user/results">Results</a></li>
+        <!-- <li><a href="/logout"><a class="waves-effect waves-light btn #f44336 red">Log Out</a></li>&nbsp&nbsp -->
+        <li class="divider" ></li>
+        <a class='dropdown-button btn #f44336 red' href='/' data-beloworigin="true" data-activates='dropdown1' id='logout_button'><%=current_user.user_name%></a>
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="/logout">Logout</a></li>
+        <ul>
+      <% else %>
+        <li><a href="/signup">Signup</a></li>
+        <li><a href="/signin">Signin</a></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

@@ -196,4 +196,11 @@ nav {
 #logout_button {
   margin-right: 20px
 }
+.home h1 {
+  color: white;
+  font-size: 10em !important;
+}
 
+.home h1:hover {
+  color: #F44336;
+}

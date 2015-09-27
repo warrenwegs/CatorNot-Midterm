@@ -70,7 +70,7 @@ post '/new_post' do
         .flat_map(&:to_a)
       raise ActiveRecord::Rollback, "Validation failed"
     end
-    erb :new_post
+  erb :new_post
   end
 end
 
