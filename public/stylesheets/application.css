@@ -74,9 +74,11 @@ nav {
 .result_or h4{
   margin:50px auto 0px;
   /*margin-bottom: -7px;*/
+  color: white;
 }
 
 .date {
+  margin-top: -12px;
   height: 1px;
 }
 
@@ -86,9 +88,10 @@ nav {
 
 .date p{
   padding-right: 5px;
+  color: white;
 }
 
-input{
+.input{
   color: white;
 }
 
@@ -183,8 +186,14 @@ input{
 .row .vote_count {
   display: inline-block;
   vertical-align: top;
+  color: white;
+}
+
+.date_div {
+  margin-top: 10px;
 }
 
 #logout_button {
   margin-right: 20px
 }
+

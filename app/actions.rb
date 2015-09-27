@@ -24,7 +24,7 @@ get '/user/results' do
 end
 
 get '/trending' do
-  @votes = Vote.group(:question_id).having("count(*) > 1").order(question_id: :DESC)
+  @votes = Vote.group(:question_id).having("count(question_id) > 1").order("count(question_id) DESC")
   erb :trending
 end
 
