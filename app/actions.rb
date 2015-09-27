@@ -103,7 +103,6 @@ end
 
 get '/vote' do
   @question_ids = Question.pluck(:id).shuffle
-  binding.pry
   i = 0
   until current_user.can_vote?(@question_ids[i]) || i == @question_ids.count - 1 do
     i += 1
