@@ -19,7 +19,7 @@
             <div class = "col s5 img1 center-align">
               <img class="valign" src=<%= question.item1.url %>><br>
               <div class="vote_count"><b><%= Vote.where(item_id: question.item1.id).count %></b></div>
-              <i class="material-icons white-text">thumb_up</i>
+              <i class="material-icons white-text thumb">thumb_up</i>
             </div>
 
             <!-- MIDDLE -->
@@ -31,8 +31,13 @@
             <div class = "col s5 img2 center-align">
               <img class="valign" src=<%= question.item2.url %>><br>
               <div class="vote_count"><b><%= Vote.where(item_id: question.item2.id).count %></b></div>
-              <i class="material-icons white-text">thumb_up</i>
+              <i class="material-icons white-text thumb_right">thumb_up</i>
+              <form method="post" action="/results/<%= question.id %>">
+                <input type="hidden" name="_method" value="DELETE" />
+                <button class="btn-floating btn-small indigo darken-2 right delete"><i class="material-icons red-text">delete</i></button>
+              </form>
             </div>
+
         </div><!-- /.row -->
       </div>
     </div>

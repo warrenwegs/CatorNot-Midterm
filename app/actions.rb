@@ -131,3 +131,8 @@ post "/vote" do
   end
   redirect '/vote'
 end
+
+delete '/results/:id' do |id|
+  Question.find(id).destroy
+  redirect '/user/results'
+end
