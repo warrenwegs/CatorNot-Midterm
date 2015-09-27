@@ -70,7 +70,7 @@ post '/new_post' do
         .flat_map(&:to_a)
       raise ActiveRecord::Rollback, "Validation failed"
     end
-    erb :new_post
+  erb :new_post
   end
 end
 
@@ -103,7 +103,6 @@ end
 
 get '/vote' do
   @question_ids = Question.pluck(:id).shuffle
-  binding.pry
   i = 0
   until current_user.can_vote?(@question_ids[i]) || i == @question_ids.count - 1 do
     i += 1
