@@ -7,6 +7,7 @@ class Vote < ActiveRecord::Base
   after_create :update_question_score
 
   def update_question_score
+    question.count_votes
     question.update_score
   end
 end

@@ -24,7 +24,7 @@ get '/user/results' do
 end
 
 get '/trending' do
-  @votes = Vote.group(:question_id).having("count(question_id) > 1").order("count(question_id) DESC")
+  @questions = Question.order("total_votes DESC")
   erb :trending
 end
 
@@ -38,7 +38,8 @@ post '/signup' do
     password_confirmation: params[:password_confirmation]
     )
   if @user.save
-    redirect '/signin'
+    session[:user_id] = @user.id
+    redirect '/'
   else
     @errors.concat [@user]
         .map(&:errors)
@@ -127,7 +128,7 @@ post "/vote" do
       user_id: params[:user_id],
       question_id: params[:question_id],
       text: params[:comment_text]
-      )
+      ) if params[:comment_text].length > 0
   end
   redirect '/vote'
 end

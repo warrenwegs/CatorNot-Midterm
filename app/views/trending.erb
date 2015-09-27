@@ -1,4 +1,4 @@
-<% @votes.each do |vote| %>
+<% @questions.each do |question| %>
 
   <div class="results">
     <div class="row">
@@ -7,8 +7,8 @@
         <div class="row indigo darken-4 date_div">
           <div class="col s12">
             <div class="date">
-              <a href = '/comments/<%= vote.question.id %>'><i class="material-icons left white-text">message</i></a>
-              <p class="right-align">Posted By: <%= vote.user.user_name%></p>
+              <a href = '/comments/<%= question.id %>'><i class="material-icons left white-text">message</i></a>
+              <p class="right-align">Posted By: <%= question.user.user_name %></p>
             </div>
           </div>
         </div>
@@ -17,8 +17,8 @@
 
             <!-- LEFT SIDE -->
             <div class = "col s5 img1 center-align">
-              <img class="valign" src=<%= vote.question.item1.url %>><br>
-              <div class="vote_count"><b><%= Vote.where(item_id: vote.question.item1.id).count %></b></div>
+              <img class="valign" src=<%= question.item1.url %>><br>
+              <div class="vote_count"><b><%= question.item1_votes %></b></div>
               <i class="material-icons white-text">thumb_up</i>
             </div>
 
@@ -29,8 +29,8 @@
 
             <!-- RIGHT SIDE -->
             <div class = "col s5 img2 center-align">
-              <img class="valign" src=<%= vote.question.item2.url %>><br>
-              <div class="vote_count"><b><%= Vote.where(item_id: vote.question.item2.id).count %></b></div>
+              <img class="valign" src=<%= question.item2.url %>><br>
+              <div class="vote_count"><b><%= question.item2_votes %></b></div>
               <i class="material-icons white-text">thumb_up</i>
             </div>
         </div><!-- /.row -->
