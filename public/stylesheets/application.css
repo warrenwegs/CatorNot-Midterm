@@ -204,3 +204,9 @@ nav {
 .home h1:hover {
   color: #F44336;
 }
+
+.delete {
+  margin-right: -15px;
+  background-color: #303f9f;
+  margin-top: -40px;
+}
