@@ -10,7 +10,6 @@ before do
 end
 
 get '/' do
-  binding.pry
   erb :index
 end
 
@@ -24,6 +23,11 @@ get '/user/results' do
   erb :'user/results'
 end
 
+get '/trending' do
+  @votes = Vote.group(:question_id).having("count(*) > 1").order(question_id: :DESC)
+  erb :trending
+end
+
 post '/signup' do
   @user = User.new(
     first_name: params[:first_name],
@@ -34,8 +38,7 @@ post '/signup' do
     password_confirmation: params[:password_confirmation]
     )
   if @user.save
-    session[:user_id] = @user.id
-    redirect '/'
+    redirect '/signin'
   else
     @errors.concat [@user]
         .map(&:errors)
@@ -53,13 +56,12 @@ get '/new_post' do
 end
 
 post '/new_post' do
-
   Question.transaction do
     @question = Question.create(user_id: current_user.id, category: params[:category])
     @item1 = Item.create(question: @question, name: params[:item1_name], url: params[:item1_url] )
     @item2 = Item.create(question: @question, name: params[:item2_name], url: params[:item2_url] )
     @question.update(item1: @item1, item2: @item2)
-   
+
     if @question.valid? && @item1.valid? && @item2.valid?
       return redirect '/user/results'
     else
@@ -89,14 +91,10 @@ post '/signin' do
   end
 end
 
-
-get "/comment/:question_id" do
+get "/comments/:question_id" do
   @comments = Comment.where(question_id: params[:question_id])
   erb :'comment'
 end
-
-
-
 
 get "/logout" do
   session.clear
@@ -117,7 +115,6 @@ get '/vote' do
   else
     redirect '/'
   end
-
 end
 
 post "/vote" do
@@ -134,7 +131,4 @@ post "/vote" do
       )
   end
   redirect '/vote'
-
 end
-
-

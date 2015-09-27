@@ -2,10 +2,10 @@ nav {
   margin-bottom: 3em;
 }
 
-.jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%; 
-  background-size: cover; color: rgb(255,255,255); height: 50em; 
+.jumbotron { background: rgb(50, 50, 50) url(.jpg) 50% 100%;
+  background-size: cover; color: rgb(255,255,255); height: 50em;
   position: relative;
-  top: -45px; 
+  top: -45px;
 }
 
 
@@ -168,19 +168,12 @@ input{
 
 
 .errors {
-  width: 500px;
-  /*height: 120px;*/
-  margin: auto;
+  width: 400px;
+  margin: auto auto 20px;
   border: 1px solid red;
   border-radius: 25px;
   padding:15px;
   color: red;
-}
-.errors img {
-  float: right;
-  margin-top: -49px;
-  margin-right: -13px;
-  border-radius: 100px;
 }
 
 .errors li {
