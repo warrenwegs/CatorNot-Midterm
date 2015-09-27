@@ -6,12 +6,10 @@
 
         <div class="row indigo darken-4 date_div">
           <div class="col s12">
-
             <div class="date">
               <a href = '/comments/<%= vote.question.id %>'><i class="material-icons left white-text">message</i></a>
               <p class="right-align">Posted By: <%= vote.user.user_name%></p>
             </div>
-
           </div>
         </div>
 
@@ -24,12 +22,9 @@
               <i class="material-icons white-text">thumb_up</i>
             </div>
 
-
-
             <!-- MIDDLE -->
             <div class="col s2 result_or center-align">
               <h4>OR</h4>
-
             </div>
 
             <!-- RIGHT SIDE -->
@@ -37,12 +32,8 @@
               <img class="valign" src=<%= vote.question.item2.url %>><br>
               <div class="vote_count"><b><%= Vote.where(item_id: vote.question.item2.id).count %></b></div>
               <i class="material-icons white-text">thumb_up</i>
-
             </div>
-
         </div><!-- /.row -->
-
-
       </div>
     </div>
   </div>

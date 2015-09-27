@@ -192,3 +192,8 @@ nav {
 .date_div {
   margin-top: 10px;
 }
+
+#logout_button {
+  margin-right: 20px
+}
+
