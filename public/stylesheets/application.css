@@ -30,6 +30,10 @@ nav {
   height: 200px;
 }
 
+#transparent_nav{
+  opacity: 0.4;
+}
+
 /*.result div{
   display: inline-block;
 }*/

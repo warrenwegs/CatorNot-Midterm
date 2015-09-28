@@ -1,16 +1,22 @@
 <nav class="indigo darken-4">
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">CatOrNot</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <ul id="nav-mobile" class="right">
 
       <%if current_user %>
-        <li><a href="/trending">Trending</a></li>
-        <li><a href="/user/results">Results</a></li>
+        <li class="hide-on-med-and-down"><a href="/new_post">Post</a></li>
+        <li class="hide-on-med-and-down"><a href="/vote">Vote</a></li>
+        <li class="hide-on-med-and-down"><a href="/trending">Trending</a></li>
+        <li class="hide-on-med-and-down"><a href="/user/results">Results</a></li>
         <!-- <li><a href="/logout"><a class="waves-effect waves-light btn #f44336 red">Log Out</a></li>&nbsp&nbsp -->
         <li class="divider" ></li>
         <a class='dropdown-button btn #f44336 red' href='/' data-beloworigin="true" data-activates='dropdown1' id='logout_button'><%=current_user.user_name%></a>
         <ul id='dropdown1' class='dropdown-content'>
           <li><a href="/logout">Logout</a></li>
+          <li><a href="/new_post">Post</a></li>
+          <li><a href="/vote">Vote</a></li>
+          <li><a href="/trending">Trending</a></li>
+          <li><a href="/user/results">Results</a></li>
         <ul>
       <% else %>
         <li><a href="/signup">Sign Up</a></li>
