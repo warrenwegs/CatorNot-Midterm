@@ -1,8 +1,8 @@
-<div class="center-align comment">
-  <p><i class="material-icons">message</i><h3>Comments</h3></p>
-    <ul>
+<div class="center-align">
+  <p><i class="material-icons">message</i><h3 class="comment_color">Comments</h3></p>
+    <ul class="comment_color">
       <%@comments.each do |comment| %>
-        <li><%=comment.text%></li>
+        <li><%=comment.text%><br>posted by: <%=comment.user.first_name%></li><br>
       <% end %>
     </ul>
  </div>
