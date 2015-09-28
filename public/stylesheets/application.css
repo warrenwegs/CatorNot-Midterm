@@ -17,6 +17,9 @@ nav {
 .jumbotron header h1 { font-size: 3em; margin: 0; text-transform: uppercase;
 }
 
+.cat-logo{
+  height: 3em;
+}
 
 .post_history {
   height: 100px;
@@ -28,6 +31,10 @@ nav {
 .result_item{
   background-color: #303f9f;
   height: 200px;
+}
+
+label{
+  color: white;
 }
 
 /*.result div{
