@@ -8,6 +8,7 @@ class Question < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   validates :category, :item1, :item2, presence: true
+  after_create :update_score
 
   def update_score
     item1_votes = votes.where(item_id: item1.id).count

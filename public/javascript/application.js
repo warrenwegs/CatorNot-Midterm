@@ -1,7 +1,14 @@
 $(function()
 {
-  $(".vote_btn").click(function(){
-    $(".item_score").removeClass("hide");
+  $("#item1_vote").click(function(){
+    $(".vote_item1").removeClass("hide");
+
+    setTimeout(function(){ }, 500);
+
+  });
+
+  $("#item2_vote").click(function(){
+    $(".vote_item2").removeClass("hide");
 
     setTimeout(function(){ }, 500);
 
