@@ -69,7 +69,11 @@ post '/new_post' do
       @errors.concat [@question, @item1, @item2]
         .map(&:errors)
         .flat_map(&:to_a)
-      raise ActiveRecord::Rollback, "Validation failed"
+      @question.destroy if @question.id
+      @item1.destroy if @item1.id
+      @item2.destory if @item2.id
+      erb :new_post
+      # raise ActiveRecord::Rollback, "Validation failed"
     end
   erb :new_post
   end
